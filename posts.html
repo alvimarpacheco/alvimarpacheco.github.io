@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Carrosséis — Alvimar Pacheco</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #111;
+    font-family: 'Inter', sans-serif;
+    padding: 24px 16px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .section-title {
+    color: #C9A84C;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .instructions {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    padding: 12px 16px;
+    max-width: 320px;
+    width: 100%;
+    color: #555;
+    font-size: 10px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .instructions strong { color: #888; }
+
+  /* SLIDE: proporção 4:5 — 1080x1350 
+     Na tela: 270x338px (escala 1/4) */
+  .slide {
+    width: 270px;
+    height: 338px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 26px 24px;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .slide .handle {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    opacity: 0.25;
+    text-transform: uppercase;
+  }
+
+  .slide .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding: 8px 0;
+  }
+
+  .slide .tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #C9A84C;
+  }
+
+  .slide .headline {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+  .slide .headline.big { font-size: 26px; }
+  .slide .headline.sm { font-size: 15px; font-weight: 700; line-height: 1.45; }
+  .slide .headline .gold { color: #C9A84C; }
+
+  .slide .body {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+  }
+  .slide .body strong { color: #fff; font-weight: 600; }
+  .slide .body .gold { color: #C9A84C; }
+
+  .slide .divider {
+    width: 28px; height: 1.5px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .slide .list {
+    display: flex; flex-direction: column; gap: 9px;
+  }
+  .slide .list-item {
+    display: flex; gap: 9px;
+    font-size: 11px; line-height: 1.5;
+    color: rgba(255,255,255,0.75);
+  }
+  .slide .list-item .ic { flex-shrink: 0; }
+
+  .slide .cta {
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #C9A84C;
+  }
+
+  .slide .pg {
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.08em;
+    opacity: 0.2;
+    text-transform: uppercase;
+    align-self: flex-end;
+  }
+
+  .carousel-row {
+    display: flex; gap: 10px;
+    overflow-x: auto;
+    max-width: 100vw;
+    padding: 4px 4px 12px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .carousel-row .slide { scroll-snap-align: start; }
+  .carousel-row::-webkit-scrollbar { height: 3px; }
+  .carousel-row::-webkit-scrollbar-track { background: #1a1a1a; }
+  .carousel-row::-webkit-scrollbar-thumb { background: #333; }
+
+  .post-group {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 10px; width: 100%;
+  }
+
+  /* LEGENDA */
+  .legenda-box {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    padding: 16px 18px;
+    max-width: 320px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .legenda-label {
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: #C9A84C; margin-bottom: 10px;
+  }
+  .legenda-text {
+    font-size: 11px; line-height: 1.8;
+    color: #888; white-space: pre-wrap;
+  }
+  .legenda-text strong { color: #bbb; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     POST 1 — REATIVAÇÃO
+     ============================================================ -->
+<div class="post-group">
+  <div class="section-title">Post 1 — Reativação</div>
+  <div class="instructions"><strong>Formato 4:5 (1080×1350px)</strong> · Role → pra ver todos os slides · Faça print de cada um</div>
+
+  <div class="carousel-row">
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">Voltei</div>
+        <div class="headline big">Fiquei um tempo fora das redes.</div>
+        <div class="body">Não porque desisti.<br/>Porque estava dentro dos projetos.</div>
+      </div>
+      <div class="pg">1 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="body">Executando. Testando. Errando. Ajustando.</div>
+        <div class="divider"></div>
+        <div class="body">Nos últimos 6 anos trabalhei nos bastidores de negócios que passaram dos <strong>R$12 milhões faturados.</strong></div>
+      </div>
+      <div class="pg">2 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="headline sm">Vi de perto o que separa quem chega lá de quem fica prometendo pra si mesmo que "esse ano vai ser diferente."</div>
+      </div>
+      <div class="pg">3 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">A resposta</div>
+        <div class="headline">Não é o produto.<br/>Não é o nicho.<br/>Não é a audiência.</div>
+        <div class="divider"></div>
+        <div class="body">É a <strong>arquitetura</strong> de como o negócio é construído.</div>
+      </div>
+      <div class="pg">4 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="headline sm">Esse perfil vai ser sobre isso.</div>
+        <div class="divider"></div>
+        <div class="body">Sem enrolação.<br/>Sem teoria vazia.<br/><br/>Só o que realmente funciona —<br/><strong>com os números pra provar.</strong></div>
+        <div class="cta">↓ Segue pra não perder</div>
+      </div>
+      <div class="pg">5</div>
+    </div>
+  </div>
+
+  <div class="legenda-box">
+    <div class="legenda-label">Legenda — Post 1</div>
+    <div class="legenda-text">Fiquei um tempo fora das redes.
+
+Não porque desisti. Porque estava dentro dos projetos — executando, testando, errando, ajustando.
+
+Nos últimos 6 anos trabalhei nos bastidores de negócios que juntos passaram dos R$12 milhões faturados.
+
+Vi de perto o que separa quem chega lá de quem fica prometendo pra si mesmo que "esse ano vai ser diferente."
+
+Não é o produto. Não é o nicho. Não é o tamanho da audiência.
+
+É a arquitetura de como o negócio é construído.
+
+Esse perfil vai ser sobre isso. Sem enrolação, sem teoria vazia — só o que realmente funciona, com os números pra provar.
+
+Se você é profissional de saúde, nutricionista, médico, coach ou qualquer expert que sabe que tem mais potencial do que está realizando no digital — fica aqui. Vai valer.
+
+👇 Segue e ativa as notificações
+
+#marketingdigital #infoprodutor #lancamentodigital #saudenainternet #estrategiadigital</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     POST 2 — CASE 30k → 245k
+     ============================================================ -->
+<div class="post-group">
+  <div class="section-title">Post 2 — Case R$30k → R$245k</div>
+
+  <div class="carousel-row">
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">Case real · Saúde feminina</div>
+        <div class="headline big">Investimos<br/>R$30k.</div>
+        <div class="headline big" style="color:#C9A84C">Faturamos<br/>R$245k.</div>
+        <div class="body">No primeiro lançamento.</div>
+      </div>
+      <div class="pg">1 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">O mercado errava aqui</div>
+        <div class="headline sm">O mercado todo focava no sintoma.</div>
+        <div class="divider"></div>
+        <div class="body">A gente foi atrás da <strong>causa raiz.</strong><br/><br/>A maioria das doenças femininas recorrentes tinha uma causa sendo ignorada pela indústria:</div>
+        <div class="headline" style="color:#C9A84C; font-size:18px">Fungos no intestino.</div>
+      </div>
+      <div class="pg">2 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="body">Não era só candidíase.<br/>Era uma síndrome com <strong>mais de 13 sintomas</strong> — que a indústria farmacêutica não tinha interesse em tratar de verdade.</div>
+        <div class="divider"></div>
+        <div class="body">Quando você nomeia o inimigo certo, a audiência para de se sentir <strong>culpada</strong> e começa a se sentir <strong>traída.</strong></div>
+      </div>
+      <div class="pg">3 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">A estrutura</div>
+        <div class="list">
+          <div class="list-item"><span class="ic" style="color:#C9A84C">✓</span><span>10.000 leads captados antes da abertura</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">✓</span><span>3 CPLs aprofundando a narrativa</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">✓</span><span>Tsunami de bônus para as primeiras compradoras</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">✓</span><span>Carrinho 7 dias → reabertura → boleto → downsell</span></div>
+        </div>
+      </div>
+      <div class="pg">4 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">O tsunami</div>
+        <div class="headline sm">Bônus irresistível pra quem compra nas primeiras horas.</div>
+        <div class="divider"></div>
+        <div class="body">Nesse caso: <strong>planner físico entregue em casa.</strong><br/><br/>Resultado do tsunami:<br/><strong style="color:#C9A84C">+100 vendas de R$997<br/>em menos de 1 hora.</strong></div>
+      </div>
+      <div class="pg">5 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">Resultado final</div>
+        <div class="headline big" style="color:#C9A84C">R$245.000</div>
+        <div class="list" style="margin-top:4px">
+          <div class="list-item"><span class="ic">→</span><span>Investimento: R$30.000</span></div>
+          <div class="list-item"><span class="ic">→</span><span>ROI: 716%</span></div>
+          <div class="list-item"><span class="ic">→</span><span>Primeiro lançamento</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="body">Nada de sorte.<br/><strong>Arquitetura certa.</strong></div>
+      </div>
+      <div class="pg">6 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">O que a maioria faz errado</div>
+        <div class="list">
+          <div class="list-item"><span class="ic" style="color:#ff5555">✗</span><span>Abre carrinho sem aquecer a lista</span></div>
+          <div class="list-item"><span class="ic" style="color:#ff5555">✗</span><span>Faz 1 CPL fraco</span></div>
+          <div class="list-item"><span class="ic" style="color:#ff5555">✗</span><span>Não tem narrativa — tem só benefícios</span></div>
+          <div class="list-item"><span class="ic" style="color:#ff5555">✗</span><span>Não tem tsunami — perde a urgência</span></div>
+          <div class="list-item"><span class="ic" style="color:#ff5555">✗</span><span>Fecha o carrinho e some</span></div>
+        </div>
+      </div>
+      <div class="pg">7 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="headline sm">O problema quase nunca é o que você vende.</div>
+        <div class="divider"></div>
+        <div class="headline sm" style="color:#C9A84C">É como você conta a história.</div>
+        <div class="body" style="margin-top:8px">Me manda uma mensagem.<br/>Faço uma análise gratuita do seu negócio essa semana.</div>
+        <div class="cta">↓ Direct "ANÁLISE"</div>
+      </div>
+      <div class="pg">8</div>
+    </div>
+  </div>
+
+  <div class="legenda-box">
+    <div class="legenda-label">Legenda — Post 2</div>
+    <div class="legenda-text">Investimos R$30.000. Faturamos R$245.000. No primeiro lançamento.
+
+Não foi sorte. Foi arquitetura.
+
+O mercado todo tratava candidíase como um problema vaginal. A gente descobriu que era uma síndrome sistêmica com mais de 13 sintomas — causada pelo crescimento de fungos no intestino, ignorada pela indústria farmacêutica.
+
+Quando você nomeia o inimigo certo, a audiência para de se sentir culpada e começa a se sentir traída. Essa virada emocional é o que converte.
+
+O tsunami de bônus foi tão forte que fizemos mais de 100 vendas de R$997 em menos de 1 hora.
+
+Desliza pra ver a estrutura completa.
+
+Se você tem um produto de saúde ou nutrição e ainda não chegou no resultado que merece — me manda "ANÁLISE" no direct. Faço uma análise gratuita do seu caso essa semana.
+
+#lancamentodigital #marketingdigital #saudeferminina #infoprodutor #estrategiadigital #copywriting</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     POST 3 — DOR + CTA
+     ============================================================ -->
+<div class="post-group">
+  <div class="section-title">Post 3 — Dor do público + CTA</div>
+
+  <div class="carousel-row">
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="headline big">Você é bom no que faz.</div>
+        <div class="body">Mas quando tenta transformar isso em dinheiro no digital —</div>
+        <div class="headline" style="color:#C9A84C">trava.</div>
+      </div>
+      <div class="pg">1 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">Não é culpa sua</div>
+        <div class="list">
+          <div class="list-item"><span class="ic" style="color:#ff5555">✗</span><span>Não é falta de audiência</span></div>
+          <div class="list-item"><span class="ic" style="color:#ff5555">✗</span><span>Não é falta de produto</span></div>
+          <div class="list-item"><span class="ic" style="color:#ff5555">✗</span><span>Não é o algoritmo</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="body">É que ninguém te ensinou a <strong>arquitetura</strong> por trás de um lançamento que escala.</div>
+      </div>
+      <div class="pg">2 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="headline sm">Você está tentando construir uma casa sem planta.</div>
+        <div class="divider"></div>
+        <div class="list">
+          <div class="list-item"><span class="ic">→</span><span>Faz conteúdo → não converte</span></div>
+          <div class="list-item"><span class="ic">→</span><span>Contrata tráfego → não retorna</span></div>
+          <div class="list-item"><span class="ic">→</span><span>Lança → fatura menos → não sabe o que errou</span></div>
+        </div>
+      </div>
+      <div class="pg">3 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">6 anos · R$12M gerados</div>
+        <div class="headline sm">O padrão de quem chega lá é sempre o mesmo:</div>
+        <div class="divider"></div>
+        <div class="body"><strong>Param de tentar descobrir o caminho sozinhos</strong> e passam a trabalhar com quem já conhece a estrada.</div>
+      </div>
+      <div class="pg">4 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">Esta semana — 5 vagas</div>
+        <div class="headline">Análise gratuita.</div>
+        <div class="divider"></div>
+        <div class="body">20 minutos.<br/>Sem pitch. Sem venda.<br/><br/>Só eu olhando pro seu negócio e te dizendo onde está o gargalo.</div>
+        <div class="cta">↓ Me manda "ANÁLISE" no direct</div>
+      </div>
+      <div class="pg">5</div>
+    </div>
+  </div>
+
+  <div class="legenda-box">
+    <div class="legenda-label">Legenda — Post 3</div>
+    <div class="legenda-text">Você é bom no que faz. Seus pacientes e alunos têm resultado. Você tem anos de formação e experiência que poucos têm.
+
+Mas quando tenta transformar isso em um negócio digital que paga as contas de verdade — trava.
+
+Não é falta de audiência. Não é falta de produto. Não é o algoritmo.
+
+É que ninguém te ensinou a arquitetura por trás de um lançamento que realmente escala.
+
+Você aprende a fazer conteúdo → não converte.
+Você contrata tráfego → não retorna.
+Você lança → fatura menos do que esperava → não sabe o que errou.
+
+O problema não é você. É que você está tentando construir uma casa sem planta.
+
+Trabalho com profissionais de saúde e nutrição há 6 anos. Já estruturei operações que passaram dos R$12 milhões.
+
+Essa semana tenho 5 horários pra conversa de análise estratégica gratuita.
+
+20 minutos. Sem pitch. Sem venda.
+
+Me manda "ANÁLISE" aqui no direct.
+
+#saudedigital #nutricaodigital #infoprodutor #lancamento #marketingparamedicos #marketingparanutri</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     POST 4 — CONTRAINTUITIVO
+     ============================================================ -->
+<div class="post-group">
+  <div class="section-title">Post 4 — Contraintuitivo</div>
+
+  <div class="carousel-row">
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="headline big">Mais seguidores não vai resolver seu problema de vendas.</div>
+      </div>
+      <div class="pg">1 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="body"><strong>8.000 seguidores →</strong> R$245.000 no primeiro lançamento.</div>
+        <div class="divider"></div>
+        <div class="body"><strong>80.000 seguidores →</strong> mal cobria os custos de tráfego.</div>
+        <div class="divider"></div>
+        <div class="body">A diferença não estava no tamanho da audiência.</div>
+      </div>
+      <div class="pg">2 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">A diferença real</div>
+        <div class="list">
+          <div class="list-item"><span class="ic" style="color:#C9A84C">1</span><span><strong>Narrativa</strong> — uma causa que a audiência acredita antes de comprar</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">2</span><span><strong>Estrutura de oferta</strong> — o que vem antes e depois da compra</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">3</span><span><strong>Tsunami</strong> — bônus que cria urgência real nas primeiras horas</span></div>
+        </div>
+      </div>
+      <div class="pg">3 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="headline sm">Se você acha que precisa crescer antes de lançar —</div>
+        <div class="divider"></div>
+        <div class="headline" style="color:#C9A84C">Você está esperando a coisa errada.</div>
+        <div class="cta" style="margin-top:16px">↓ Me manda uma mensagem</div>
+      </div>
+      <div class="pg">4</div>
+    </div>
+  </div>
+
+  <div class="legenda-box">
+    <div class="legenda-label">Legenda — Post 4</div>
+    <div class="legenda-text">Mais seguidores não vai resolver seu problema de vendas.
+
+Trabalhei num projeto com 8.000 seguidores que faturou R$245.000 no primeiro lançamento.
+
+Trabalhei em outro com 80.000 seguidores que mal cobria os custos de tráfego.
+
+A diferença não estava no tamanho da audiência. Estava em três coisas: narrativa, estrutura de oferta e tsunami de bônus.
+
+Se você tem menos de 20.000 seguidores e acha que precisa crescer antes de lançar — você está esperando a coisa errada.
+
+O que precisa estar no lugar é a arquitetura. O tamanho da audiência é consequência.
+
+Me manda uma mensagem. Posso te mostrar o que está faltando no seu caso.
+
+#lancamentodigital #infoprodutor #marketingdigital #crescimentoorgânico #estrategiadigital</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     POST 5 — BASTIDOR SUPLEMENTOS
+     ============================================================ -->
+<div class="post-group">
+  <div class="section-title">Post 5 — Bastidor real</div>
+
+  <div class="carousel-row">
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">Bastidor</div>
+        <div class="headline">A decisão mais difícil que já tomei num projeto.</div>
+        <div class="body" style="margin-top:4px">E o que ela me ensinou sobre construir um negócio de verdade.</div>
+      </div>
+      <div class="pg">1 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="body">O protocolo de tratamento indicava <strong>mais de 67 produtos</strong> pra cada paciente.</div>
+        <div class="divider"></div>
+        <div class="body">Marcas diferentes. Qualidade variada. A paciente se perdia.<br/><br/>A aderência caía. O resultado ficava comprometido.</div>
+      </div>
+      <div class="pg">2 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">A decisão</div>
+        <div class="headline sm">A solução óbvia era virar afiliado.</div>
+        <div class="divider"></div>
+        <div class="headline sm" style="color:#C9A84C">A solução certa era criar nossa própria linha.</div>
+      </div>
+      <div class="pg">3 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">O que aconteceu</div>
+        <div class="headline sm">A recorrência dos suplementos superou o faturamento dos lançamentos.</div>
+        <div class="divider"></div>
+        <div class="body">O uso era <strong>urgente, necessário e contínuo.</strong><br/>A paciente não precisava ser convencida todo mês.</div>
+      </div>
+      <div class="pg">4 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="headline sm">O lançamento abre a porta.</div>
+        <div class="headline sm" style="color:#C9A84C; margin-top:8px">O produto recorrente sustenta o negócio.</div>
+        <div class="divider"></div>
+        <div class="body">Você tem um produto.<br/><strong>Mas tem um ecossistema?</strong></div>
+        <div class="cta">↓ Me manda uma mensagem</div>
+      </div>
+      <div class="pg">5</div>
+    </div>
+  </div>
+
+  <div class="legenda-box">
+    <div class="legenda-label">Legenda — Post 5</div>
+    <div class="legenda-text">A decisão mais difícil que já tomei num projeto foi criar uma linha de suplementos do zero.
+
+O protocolo de tratamento indicava mais de 67 produtos pra cada paciente. A paciente se perdia, a aderência caía, o resultado ficava comprometido — e a gente não ganhava nada com nenhuma indicação.
+
+A solução óbvia era virar afiliado de alguma marca.
+
+A solução certa foi criar a nossa própria.
+
+O que não esperávamos: a recorrência dos suplementos superou o faturamento dos lançamentos. Porque o uso era urgente, necessário e contínuo. A paciente não precisava ser convencida todo mês — ela já entendia por que precisava.
+
+O lançamento abre a porta. O produto recorrente sustenta o negócio.
+
+Você tem um produto hoje. Mas tem um ecossistema?
+
+Me manda uma mensagem — posso te ajudar a mapear isso pro seu caso.
+
+#suplementos #saudedigital #recorrencia #infoprodutor #negociodigital #nutricao</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     POST 6 — AUTORIDADE MÁXIMA
+     ============================================================ -->
+<div class="post-group">
+  <div class="section-title">Post 6 — Autoridade máxima</div>
+
+  <div class="carousel-row">
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">6 anos de bastidor</div>
+        <div class="headline big">O que eu já construí que você provavelmente não sabe.</div>
+      </div>
+      <div class="pg">1 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="list">
+          <div class="list-item"><span class="ic" style="color:#C9A84C">→</span><span>R$30k → R$245k no 1º lançamento</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">→</span><span>Zero aos R$10 milhões</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">→</span><span>+100 vendas de R$997 em menos de 1 hora</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">→</span><span>Linha de suplementos superando lançamentos em recorrência</span></div>
+        </div>
+      </div>
+      <div class="pg">2 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="list">
+          <div class="list-item"><span class="ic" style="color:#C9A84C">→</span><span>Narrativas copiadas por outros players</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">→</span><span>Perpétuo com ROAS 2 sustentado</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">→</span><span>Equipe de vendas faturando R$200k/mês</span></div>
+          <div class="list-item"><span class="ic" style="color:#C9A84C">→</span><span>Metodologia reconhecida em parceria com ensino superior</span></div>
+        </div>
+      </div>
+      <div class="pg">3 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="headline sm">Não conto isso pra impressionar.</div>
+        <div class="divider"></div>
+        <div class="body">Conto porque se você é expert de saúde ou nutrição travado no digital —<br/><br/><strong>você não precisa descobrir o caminho sozinho.</strong><br/><br/>Eu já andei nessa estrada. Muitas vezes. Com resultados reais.</div>
+      </div>
+      <div class="pg">4 →</div>
+    </div>
+
+    <div class="slide">
+      <div class="handle">@alvimarpacheco</div>
+      <div class="content">
+        <div class="tag">Esta semana</div>
+        <div class="headline">Horários disponíveis pra análise gratuita.</div>
+        <div class="divider"></div>
+        <div class="body">20 minutos. Você me conta onde está e onde quer chegar.<br/>Eu te digo o que está no caminho.</div>
+        <div class="cta">↓ Me manda "QUERO" no direct</div>
+      </div>
+      <div class="pg">5</div>
+    </div>
+  </div>
+
+  <div class="legenda-box">
+    <div class="legenda-label">Legenda — Post 6</div>
+    <div class="legenda-text">Em 6 anos trabalhando nos bastidores do marketing digital de saúde e nutrição, eu:
+
+→ Estruturei um lançamento de R$30k que faturou R$245k no primeiro ciclo
+→ Construí do zero uma operação que passou dos R$10 milhões
+→ Gerei mais de 100 vendas de R$997 em menos de 1 hora com um tsunami certo
+→ Criei narrativas que foram copiadas por outros players do mercado
+→ Escalei perpétuo com ROAS 2 — sustentado, não pontual
+→ Montei equipe de vendas faturando R$200k/mês
+→ Tive metodologia reconhecida em parceria com ensino superior
+
+Não conto isso pra impressionar.
+
+Conto porque se você é um expert de saúde ou nutrição travado no digital — você não precisa descobrir o caminho sozinho.
+
+Eu já andei nessa estrada. Muitas vezes. Com resultados documentados.
+
+Tenho horários disponíveis essa semana pra conversa de análise estratégica gratuita. 20 minutos. Você me conta onde está e onde quer chegar. Eu te digo o que está no caminho e o que fazer primeiro.
+
+Me manda "QUERO" aqui no direct.
+
+#marketingdigital #lancamentodigital #infoprodutor #saudedigital #nutricaodigital #mentoriadigital</div>
+  </div>
+</div>
+
+</body>
+</html>
